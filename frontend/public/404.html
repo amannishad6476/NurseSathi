@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NurseSathi</title>
+    <script>
+      (function () {
+        var base = '/NurseSathi';
+        var pathname = window.location.pathname;
+        var search = window.location.search || '';
+        var hash = window.location.hash || '';
+
+        if (pathname.startsWith(base)) {
+          var route = pathname.slice(base.length);
+          if (route && route !== '/' && !route.startsWith('/#')) {
+            window.location.replace(base + '/#' + route + search + hash);
+            return;
+          }
+        }
+        window.location.replace(base + '/');
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to NurseSathi...</p>
+  </body>
+</html>
